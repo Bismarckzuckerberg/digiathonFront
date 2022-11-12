@@ -20,7 +20,7 @@ const FaturaKesmeEkrani = () => {
           <div className='flex flex-row gap-20 justify-center font-OpenSans text-[#4b4e51] font-medium border-b border-[#a9acaf]/50 shadow-lg pt-2 '>
             <p className=' font-semibold  text-[#3b77ac] border-b-2 border-[#3b77ac] p-2 '>Fatura Kesme</p>
             <p className=' p-2'><Link href='/FaturaAratma'>Fatura Aratma</Link></p>
-            <p className=' p-2'><Link href='/FaturalarimiGorme'>Faturalarimi Gorme</Link></p>
+            <p className=' p-2'><Link href='/FaturalarimiGorme'>Kestiğim Faturalar</Link></p>
           </div>
           <CreateInvoice/>
         </div>

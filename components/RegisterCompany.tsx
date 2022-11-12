@@ -81,7 +81,7 @@ const Home: NextPage = () => {
          <div className="border border-[#e7ebed] mx-4 rounded-2xl">
            <div className=" m-4 flex-col flex gap-6">
 
-             <p className=" font-OpenSans text-[#3a89b4]">Sirket Kaydi</p>
+             <p className=" font-OpenSans text-[#3a89b4]">Şirket Kaydı</p>
 
 
 
@@ -100,54 +100,54 @@ const Home: NextPage = () => {
                <div className="flex-col flex gap-6">
                  <form  className="flex-col flex gap-6"> 
                    <div>
-                     <p className=" flex font-OpenSans font-thin text-[#222]"><p className=" text-[#3a89b4]">*</p>Sirket Cuzdan Adresi</p>
+                     <p className=" flex font-OpenSans font-thin text-[#222]"><p className=" text-[#3a89b4]">*</p>Şirket cüzdan Adresi</p>
                      <input 
                        type="text"
                        className="border border-[#a8acae] w-full rounded-sm max-w-[700px]"
                        value={form.companyAddress}
                        onChange={(e) => updateForm("companyAddress", e)}
                      />
-                     <p className=" font-OpenSans font-extralight text-sm text-[#4a4e50]">Yetki verilecek sirketin cuzdan adresini giriniz.</p>
+                     <p className=" font-OpenSans font-extralight text-sm text-[#4a4e50]">Yetki verilecek şirketin cüzdan adresini giriniz.</p>
                    </div>
                    <div>
-                     <p className=" flex font-OpenSans font-thin text-[#222]"><p className=" text-[#3a89b4]">*</p>Sirket Vergi Numarasi</p>
+                     <p className=" flex font-OpenSans font-thin text-[#222]"><p className=" text-[#3a89b4]">*</p>Sirket Vergi Numarası</p>
                      <input
                        type="text"
                        className="border border-[#a8acae] w-full rounded-sm max-w-[700px]"
                        value={form.companyTaxNumber}
                        onChange={(e) => updateForm("companyTaxNumber", e)}
                      />
-                      <p className=" font-OpenSans font-extralight text-sm text-[#4a4e50]">Yetki verilecek sirketin vergi numarasini giriniz.</p>
+                      <p className=" font-OpenSans font-extralight text-sm text-[#4a4e50]">Yetki verilecek şirketin vergi numarasını giriniz.</p>
                    </div>
                    <div>
-                     <p className=" flex font-OpenSans font-thin text-[#222]"><p className=" text-[#3a89b4]">*</p>Sirket Sahibinin Ismi</p>
+                     <p className=" flex font-OpenSans font-thin text-[#222]"><p className=" text-[#3a89b4]">*</p>Şirket İsmi</p>
                      <input
                        type="text"
                        className="border border-[#a8acae] w-full rounded-sm max-w-[700px]"
                        value={form.ownerName}
                        onChange={(e) => updateForm("ownerName", e)}
                      />
-                     <p className=" font-OpenSans font-extralight text-sm text-[#4a4e50]">Yetki verilecek sirketin sahibinin ismini giriniz.</p>
+                     <p className=" font-OpenSans font-extralight text-sm text-[#4a4e50]">Yetki verilecek şirketin ismini giriniz.</p>
                    </div>
                    <div>
-                     <p className=" flex font-OpenSans font-thin text-[#222]"><p className=" text-[#3a89b4]">*</p>Sirket Adresi</p>
+                     <p className=" flex font-OpenSans font-thin text-[#222]"><p className=" text-[#3a89b4]">*</p>Şirket Adresi</p>
                      <input
                        type="text"
                        className="border border-[#a8acae] w-full rounded-sm max-w-[700px]"
                        value={form.location}
                        onChange={(e) => updateForm("location", e)}
                      />
-                     <p className=" font-OpenSans font-extralight text-sm text-[#4a4e50]">Yetki verilecek sirketin adresini giriniz.</p>
+                     <p className=" font-OpenSans font-extralight text-sm text-[#4a4e50]">Yetki verilecek şirketin adresini giriniz.</p>
                    </div>
                    <div>
-                     <p className=" flex font-OpenSans font-thin text-[#222]"><p className=" text-[#3a89b4]">*</p>Sirketin </p>
+                     <p className=" flex font-OpenSans font-thin text-[#222]"><p className=" text-[#3a89b4]">*</p>Şirketin IBAN'ını </p>
                      <input
                        type="text"
                        className="border border-[#a8acae] w-full rounded-sm max-w-[700px]"
                        value={form.companyIBAN}
                        onChange={(e) => updateForm("companyIBAN", e)}
                      />
-                     <p className=" font-OpenSans font-extralight text-sm text-[#4a4e50]">Yetki verilecek sirketin adresini giriniz.</p>
+                     <p className=" font-OpenSans font-extralight text-sm text-[#4a4e50]">Yetki verilecek şirketin IBAN'nını giriniz.</p>
                    </div>
                  </form>
                  <div className=" border-t-2 border-[#4284be] flex justify-center bg-[#4284be]/10 h-full min-h-[120px] rounded-b-xl">

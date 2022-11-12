@@ -97,14 +97,14 @@ const Home: NextPage = () => {
         <div className=" m-4 flex-col flex gap-6">
         <div className="flex justify-center flex-col ">
         <p className=" text-3xl font-light text-[#3b77ac] font-OpenSans min-h-[100px] pt-10 pb-8 w-full flex justify-center">
-          Fatura Kesme Ekrani
+          Fatura Kesme Ekranı
           </p>
         <p className=" px-10 pb-5 mb-4 text-sm font-OpenSans">
-        Bu sayfa üzerinde Türkiye Cumhuriyeti Devleti&apos;ne ait temel yasama, yürütme ve yargı kurumları ile Özel Kuruluşların listesini bulabilirsiniz. İlgili bağlantıları kullanarak kurum hakkında bilgi alabilir, e-Devlet Kapısı ve kendi İnternet siteleri üzerinden sunulan elektronik hizmetlerin listesine ulaşabilirsiniz. 
+        Bu sayfa üzerinde yetkili şirketler verdikleri hizmetler karşılığı fatura kişinin cüzdan adresine fatura kesebilir.
         </p>
       </div>
 
-          <p className=" font-OpenSans text-[#3a89b4]">Fatura Kaydi</p>
+          <p className=" font-OpenSans text-[#3a89b4]">Fatura Kaydı</p>
 
 
 
@@ -130,17 +130,17 @@ const Home: NextPage = () => {
                     value={form.recipientTCVKN}
                     onChange={(e) => updateForm("recipientTCVKN", e)}
                   />
-                  <p className=" font-OpenSans font-extralight text-sm text-[#4a4e50]">Yetki verilecek sirketin cuzdan adresini giriniz.</p>
+                  <p className=" font-OpenSans font-extralight text-sm text-[#4a4e50]">Fatura kesilenin TC kimlik nosu veyahut KV nosunu giriniz.</p>
                 </div>
                 <div>
-                  <p className=" flex font-OpenSans font-thin text-[#222]"><p className=" text-[#3a89b4]">*</p>Fatura Adi</p>
+                  <p className=" flex font-OpenSans font-thin text-[#222]"><p className=" text-[#3a89b4]">*</p>Fatura Adı</p>
                   <input
                     type="text"
                     className="border border-[#a8acae] w-full rounded-sm max-w-[700px]"
                     value={form.recipientName}
                     onChange={(e) => updateForm("recipientName", e)}
                   />
-                   <p className=" font-OpenSans font-extralight text-sm text-[#4a4e50]">Yetki verilecek sirketin vergi numarasini giriniz.</p>
+                   <p className=" font-OpenSans font-extralight text-sm text-[#4a4e50]">Faturanın adını giriniz.</p>
                 </div>
                 <div>
                   <p className=" flex font-OpenSans font-thin text-[#222]"><p className=" text-[#3a89b4]">*</p>Fatura Kesilecek Adres</p>
@@ -150,37 +150,37 @@ const Home: NextPage = () => {
                     value={form.recipientAddress}
                     onChange={(e) => updateForm("recipientAddress", e)}
                   />
-                  <p className=" font-OpenSans font-extralight text-sm text-[#4a4e50]">Yetki verilecek sirketin sahibinin ismini giriniz.</p>
+                  <p className=" font-OpenSans font-extralight text-sm text-[#4a4e50]">Faturanın kesildiği adresi giriniz.</p>
                 </div>
                 <div>
-                  <p className=" flex font-OpenSans font-thin text-[#222]"><p className=" text-[#3a89b4]">*</p>Fatura Aciklamasi</p>
+                  <p className=" flex font-OpenSans font-thin text-[#222]"><p className=" text-[#3a89b4]">*</p>Fatura Açıklaması</p>
                   <input
                     type="text"
                     className="border border-[#a8acae] w-full rounded-sm max-w-[700px]"
                     value={form.description}
                     onChange={(e) => updateForm("description", e)}
                   />
-                  <p className=" font-OpenSans font-extralight text-sm text-[#4a4e50]">Yetki verilecek sirketin sahibinin ismini giriniz.</p>
+                  <p className=" font-OpenSans font-extralight text-sm text-[#4a4e50]">Fatura için açıklama giriniz.</p>
                 </div>
                 <div>
-                  <p className=" flex font-OpenSans font-thin text-[#222]"><p className=" text-[#3a89b4]">*</p>Ucret</p>
+                  <p className=" flex font-OpenSans font-thin text-[#222]"><p className=" text-[#3a89b4]">*</p>Ücret</p>
                   <input
                     type="text"
                     className="border border-[#a8acae] w-full rounded-sm max-w-[700px]"
                     value={form.cost}
                     onChange={(e) => updateForm("cost", e)}
                   />
-                  <p className=" font-OpenSans font-extralight text-sm text-[#4a4e50]">Yetki verilecek sirketin adresini giriniz.</p>
+                  <p className=" font-OpenSans font-extralight text-sm text-[#4a4e50]">Fiyat/Hizmet bedeli giriniz.</p>
                 </div>
                 <div>
-                  <p className=" flex font-OpenSans font-thin text-[#222]"><p className=" text-[#3a89b4]">*</p>Vergi Orani</p>
+                  <p className=" flex font-OpenSans font-thin text-[#222]"><p className=" text-[#3a89b4]">*</p>Vergi Oranı</p>
                   <input
                     type="text"
                     className="border border-[#a8acae] w-full rounded-sm max-w-[700px]"
                     value={form.taxRatio}
                     onChange={(e) => updateForm("taxRatio", e)}
                   />
-                  <p className=" font-OpenSans font-extralight text-sm text-[#4a4e50]">Yetki verilecek sirketin adresini giriniz.</p>
+                  <p className=" font-OpenSans font-extralight text-sm text-[#4a4e50]">Vergi oranını giriniz.</p>
                 </div>
               </form>
               <div className=" border-t-2 border-[#4284be] flex justify-center bg-[#4284be]/10 h-full min-h-[120px] rounded-b-xl">

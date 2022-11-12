@@ -2,7 +2,7 @@
 import {
     useConnectModal,
     useAccountModal,
-    useChainModal,
+
   } from '@rainbow-me/rainbowkit';
   
   
