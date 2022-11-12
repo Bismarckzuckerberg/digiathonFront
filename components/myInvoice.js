@@ -25,21 +25,15 @@ function Feed({}) {
     let myUpdatedInvoices = [];
     for (let i = 0; i < myAllInvoices.length; i++) {
       let invoice = {
-        companyAddress: myAllInvoices[i].companyAddress,
-        recipientTCVKN: myAllInvoices[i].recipientTCVKN,
+        id: myAllInvoices[i].id,
+        recipientTCVKN: myAllInvoices[i].tcVkn,
         recipientName: myAllInvoices[i].recipientName,
         recipientAddress: myAllInvoices[i].recipientAddress,
         description: myAllInvoices[i].description,
         cost: myAllInvoices[i].cost,
         taxRatio: myAllInvoices[i].taxRatio,
+        paid: myAllInvoices[i].paid,
         kcompanyAddress: myAllInvoices[i].kcompanyAddress,
-        kcompanyTaxNumber: myAllInvoices[i].kcompanyTaxNumber,
-        kbalance: myAllInvoices[i].kbalance,
-        kownerName: myAllInvoices[i].kownerName,
-        klocation: myAllInvoices[i].klocation,
-        kcompanyIBAN: myAllInvoices[i].kcompanyIBAN,
-        
-        
       };
       myUpdatedInvoices.push(invoice);
     }
@@ -122,8 +116,8 @@ function Feed({}) {
           {posts.map((post,id) => (
 
             <tr key={id}>
-              <td  className=" border-r border-b border-[#4b4e51]">1</td>
-              <td  className=" border-r border-b border-[#4b4e51]">{post.recipientTCVKN.toString()}</td>
+              <td  className=" border-r border-b border-[#4b4e51]">{Number(post.id)}</td>
+              <td  className=" border-r border-b border-[#4b4e51]">{post.recipientTCVKN}</td>
               <td  className=" border-r border-b border-[#4b4e51]">{post.recipientName}</td>
               <td  className=" border-r border-b border-[#4b4e51]">12/02/2022</td>
               <td  className=" border-r border-b border-[#4b4e51]">{Number(post.cost) + Number(post.cost * (post.taxRatio / 100))}TL</td>
@@ -151,8 +145,8 @@ function Feed({}) {
                                         <div className=' border-y-4 border-black max-w-[400px] mt-12'>
                                             <p className=' text-transform: uppercase '>Sayin</p>
                                             <p>{post.recipientName}</p>
-                                            <p>Cuzdan Adresi: {post.companyAddress}  </p>
-                                            <p>VKN: {post.recipientTCVKN.toString()} </p>
+                                            <p>Cuzdan Adresi: {post.id}  </p>
+                                            <p>VKN: {post.recipientTCVKN} </p>
                                             <p>Adresi: {post.recipientAddress} </p>
                                         </div>
                                         <p className=' font-bold flex flex-row'>ETTN:  <p className=' font-normal'>57948ac9­0059­4499­96ef­01670d538686</p></p>        
@@ -251,7 +245,7 @@ function Feed({}) {
                                             1
                                         </p>
                                         <p className=' border-l-2 border-black w-full min-w-[150px] max-w-[225px] justify-center  flex  p-1'>
-                                            {post.recipientTCVKN.toString()}
+                                            {post.recipientTCVKN}
                                         </p>
                                         <p className=' border-l-2 border-black w-full min-w-[150px] max-w-[225px] justify-center  flex  p-1'>
                                             {post.recipientName}
