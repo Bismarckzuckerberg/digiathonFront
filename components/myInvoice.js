@@ -1,9 +1,12 @@
+
 import React, { useState, useEffect } from "react";
 import { ethers } from "ethers";
 import ContractAbi from "../contract-abi.json";
-import { contractAddress } from "../contractAddress";
 import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
 import Modal from '@mui/material/Modal';
+import {contractAddress} from "../contractAddress";
+
 
 const bull = (
   <Box
@@ -14,11 +17,8 @@ const bull = (
   </Box>
 );
 
-
 function Feed({}) {
   const [posts, setPosts] = useState([]);
-  const [tcno, setTcno] = useState();
-  const [open, setOpen] = React.useState(false);
 
   const ContractAddress = contractAddress;
   const getMyUpdatedInvoices = (myAllInvoices) => {
@@ -32,15 +32,18 @@ function Feed({}) {
         description: myAllInvoices[i].description,
         cost: myAllInvoices[i].cost,
         taxRatio: myAllInvoices[i].taxRatio,
-
+        kcompanyAddress: myAllInvoices[i].kcompanyAddress,
+        kcompanyTaxNumber: myAllInvoices[i].kcompanyTaxNumber,
+        kbalance: myAllInvoices[i].kbalance,
+        kownerName: myAllInvoices[i].kownerName,
+        klocation: myAllInvoices[i].klocation,
+        kcompanyIBAN: myAllInvoices[i].kcompanyIBAN,
+        
+        
       };
       myUpdatedInvoices.push(invoice);
     }
     return myUpdatedInvoices;
-  };
-
-  const onChangeHandler = (event) => {
-    setTcno(event.target.value);
   };
 
   const getAllMyInvoices = async () => {
@@ -56,10 +59,9 @@ function Feed({}) {
           signer
         );
 
-        let myAllInvoices = await Contract.getInvoicesByTCVKN(tcno);
+        let myAllInvoices = await Contract.getMyInvoices();
         setPosts(getMyUpdatedInvoices(myAllInvoices, ethereum.selectedAddress));
         console.log(myAllInvoices);
-        
       } else {
         console.log("Ethereum object doesn't exist");
       }
@@ -67,10 +69,11 @@ function Feed({}) {
       console.log(error);
     }
   };
+  
 
- 
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
+  useEffect(() => {
+    getAllMyInvoices();
+  }, []);
 
   const style = {
     position: 'absolute',
@@ -85,49 +88,49 @@ function Feed({}) {
   };
   
 
+    const [open, setOpen] = React.useState(false);
+    const handleOpen = () => setOpen(true);
+    const handleClose = () => setOpen(false);
 
   return (
-    <div className="">
-      <div className="className= border border-[#e7ebed] m-4 rounded-2xl">
-      <div className="flex ml-10 flex-col">
+    <div className="border border-[#e7ebed] m-4 rounded-2xl">
       <div className="flex justify-center flex-col ">
         <p className=" text-3xl font-light text-[#3b77ac] font-OpenSans min-h-[100px] pt-10 pb-8 w-full flex justify-center">
-          Fatura Aratma Ekranı
+          Kestiğim Faturalar
           </p>
         <p className=" px-10 pb-5 mb-4 text-sm font-OpenSans">
-            Bu sayfa üzerinde faturaları aratabilir ve inceleyebilirsiniz. 
+            Bu sayfada kestiğiniz faturları görebilir, detaylarını inceleyebilirsiniz. 
         </p>
       </div>
-        <p className=' font-OpenSans text-[#3a89b4] py-6'>TC/VKN Fatura Arat</p>
+      <div className="flex flex-col gap-3">
+  
       </div>
+      <div className=" m-6">
+        <table class=" border border-[#4b4e51] w-full  text-[#4a4e50]">
+          <thead className=" border-b border-[#4b4e51] bg-[#a9acaf]/10">
+            <tr>
+              <th className=" border-r p-4 border-[#4b4e51]">Fatura No</th>
+              <th className=" border-r border-[#4b4e51]">TC/KVN</th>
+              <th className=" border-r border-[#4b4e51]">Fatura İsmi</th>
+              <th className=" border-r border-[#4b4e51]">Fatura Tarihi</th>
+              <th className=" border-r border-[#4b4e51]">Mal/Hizmet Toplam Tutarı</th>
+              <th className=" border-r border-[#4b4e51]">Fatura Açıklaması</th>
+              <th className=" border-r border-[#4b4e51]">Fatura Detayları</th>
+            </tr>
+          </thead>
+          <tbody>
+          {posts.map((post,id) => (
 
-        
-          <div className=" flex flex-col w-full ml-10 pb-6">
-            <p className=" flex font-OpenSans font-thin text-[#222] "><p className=" text-[#3a89b4]">*</p>Şirket Vergi Numarası</p>
-            <input
-            type="number"
-            id="inputPassword2"
-            className="border border-[#a8acae] w-full rounded-sm max-w-[700px]"
-            value={tcno}
-            onChange={onChangeHandler}
-            />
-            <p className=" font-OpenSans font-extralight text-sm text-[#4a4e50] pb-4">Yetki verilecek şirketin vergi numarasını giriniz.</p>
-
-          </div>
-            <div className=" border-t-2 border-[#4284be] flex justify-center bg-[#4284be]/10 h-full min-h-[120px] rounded-b-xl">
-              <div className=" bg-[#3b77ac] h-min p-0.5 mt-8 rounded-full text-[#fff]">
-                <button type="" className=" border-t border-[#5d93c2]  rounded-full p-2 px-5  font-OpenSans flex flex-row items-center"
-                onClick={() => {
-                  getAllMyInvoices();
-                  handleOpen();
-                }} >Arat</button>  
-              </div>
-              
-            </div>
-
-      </div>
-      {posts.map((post) => (
-        <div className="">
+            <tr key={id}>
+              <td  className=" border-r border-b border-[#4b4e51]">1</td>
+              <td  className=" border-r border-b border-[#4b4e51]">{post.recipientTCVKN.toString()}</td>
+              <td  className=" border-r border-b border-[#4b4e51]">{post.recipientName}</td>
+              <td  className=" border-r border-b border-[#4b4e51]">12/02/2022</td>
+              <td  className=" border-r border-b border-[#4b4e51]">{Number(post.cost) + Number(post.cost * (post.taxRatio / 100))}TL</td>
+              <td  className=" border-r border-b border-[#4b4e51]">{post.description}</td>
+              <td  className=" border-r border-b border-[#4b4e51]">
+              <div>
+                <Button onClick={handleOpen} className='text-blue-600 underline '>Detaylar...</Button>
                 <Modal
                   open={open}
                   onClose={handleClose}
@@ -140,15 +143,15 @@ function Feed({}) {
                         <div className='flex-row w-full flex justify-between gap-6'>
                                 <div className=' text-black/70 font-OpenSans'>
                                         <div className=' border-y-4 border-black max-w-[400px]'>
-                                            <p className=' text-transform: uppercase '>medine mekke ulasim a.s</p>
+                                            <p className=' text-transform: uppercase '>medine mekke a.s</p>
                                             <p>Şirket Cüzdan Adresi:0x08e2922D0773F1969fB1D29b08D564B8b34b992a</p>
                                             <p>VKN: 124123123321</p>
-                                            <p>Şirket Adresi: İstanbul</p>
+                                            <p>Şirket Adresi: İzmir</p>
                                         </div>
                                         <div className=' border-y-4 border-black max-w-[400px] mt-12'>
                                             <p className=' text-transform: uppercase '>Sayin</p>
                                             <p>{post.recipientName}</p>
-                                            <p>Cüzdan Adresi: {post.companyAddress}  </p>
+                                            <p>Cuzdan Adresi: {post.companyAddress}  </p>
                                             <p>VKN: {post.recipientTCVKN.toString()} </p>
                                             <p>Adresi: {post.recipientAddress} </p>
                                         </div>
@@ -161,7 +164,7 @@ function Feed({}) {
                                         className=' min-h-[150px] min-w-[150px]'
                                         src="/hazinabak.png"
                                     />
-                                    <p className=' ml-2 font-extrabold font-OpenSans text-black/60 '>E Fatura Arsiv</p>
+                                    <p className=' ml-2 font-extrabold font-OpenSans text-black/60 '>E Fatura Arşiv</p>
                                 </div>
                                 <div className=' h-full  w-full ml-44 flex flex-col '>
                                     <img 
@@ -182,7 +185,7 @@ function Feed({}) {
                                             Fatura Tipi:
                                         </p>
                                         <p  className='flex flex-row border-b-2 font-extrabold border-black/70 p-1'>
-                                            Gönderim Şekli:
+                                            Gonderim Sekli:
                                         </p>
                                         <p  className='flex flex-row border-b-2 font-extrabold border-black/70 p-1'>
                                             Düzenleme Tarihi:
@@ -275,7 +278,7 @@ function Feed({}) {
                                         Mal Hizmet Toplam Tutarı:
                                     </p>
                                     <p  className='flex flex-row justify-end border-b-2 border-black/70 p-1'>
-                                        Toplam Iskonto:
+                                        Toplam İskonto:
                                     </p>
                                     <p  className='flex flex-row justify-end border-b-2 border-black/70 p-1'>
                                         Hesaplanan KDV(%{Number(post.taxRatio)}):
@@ -284,7 +287,7 @@ function Feed({}) {
                                         Vergiler Dahil Toplam Tutar:
                                     </p>
                                     <p  className='flex flex-row justify-end  p-1'>
-                                        Odenecek Tutar:
+                                        Ödenecek Tutar:
                                     </p>
 
                                     </div>
@@ -317,8 +320,15 @@ function Feed({}) {
                     </div>
                   </Box>
                 </Modal>
-        </div>
-      ))}
+              </div>
+              </td>
+            </tr>
+            ))} 
+
+          </tbody>
+        </table>
+      </div>
+
     </div>
   );
 }
