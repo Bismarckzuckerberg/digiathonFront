@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { ConnectModalCustom } from "./CustomConnectButton";
+import CompanyModal from '../components/CompanyModal'
 
 
 /* ======= Icons ======= */
@@ -62,8 +63,8 @@ export default function Header(props: any) {
           </div>
 
           <div className={style.menuitem}>
-            <div className={style.icon}>
-
+            <div className={' bg-[#3b77ac] '}>
+              <CompanyModal/>
             </div>
             <div className={style.icon}>
               <KeyboardArrowDownIcon />

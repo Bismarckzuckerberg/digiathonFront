@@ -1,32 +1,8 @@
 [
 	{
 		"inputs": [],
-		"name": "invalidPaymentValue",
-		"type": "error"
-	},
-	{
-		"inputs": [],
 		"name": "notPayFunction",
 		"type": "error"
-	},
-	{
-		"anonymous": false,
-		"inputs": [
-			{
-				"indexed": true,
-				"internalType": "uint256",
-				"name": "invoiceID",
-				"type": "uint256"
-			},
-			{
-				"indexed": true,
-				"internalType": "address",
-				"name": "customerAddress",
-				"type": "address"
-			}
-		],
-		"name": "validPayment",
-		"type": "event"
 	},
 	{
 		"inputs": [
@@ -93,14 +69,8 @@
 		"type": "function"
 	},
 	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "_id",
-				"type": "uint256"
-			}
-		],
-		"name": "pay",
+		"inputs": [],
+		"name": "payToGoverment",
 		"outputs": [],
 		"stateMutability": "payable",
 		"type": "function"
@@ -139,8 +109,13 @@
 		"type": "function"
 	},
 	{
+		"inputs": [],
+		"stateMutability": "nonpayable",
+		"type": "constructor"
+	},
+	{
 		"stateMutability": "payable",
-		"type": "receive"
+		"type": "fallback"
 	},
 	{
 		"inputs": [],
@@ -151,12 +126,7 @@
 	},
 	{
 		"stateMutability": "payable",
-		"type": "fallback"
-	},
-	{
-		"inputs": [],
-		"stateMutability": "nonpayable",
-		"type": "constructor"
+		"type": "receive"
 	},
 	{
 		"inputs": [

@@ -32,7 +32,6 @@ function Feed({}) {
         description: myAllInvoices[i].description,
         cost: myAllInvoices[i].cost,
         taxRatio: myAllInvoices[i].taxRatio,
-        paid: myAllInvoices[i].isPaid,
         kcompanyAddress: myAllInvoices[i].companyAddress,
       };
       myUpdatedInvoices.push(invoice);
