@@ -27,13 +27,13 @@ function Feed({}) {
       let invoice = {
         id: myAllInvoices[i].id,
         recipientTCVKN: myAllInvoices[i].tcVkn,
-        recipientName: myAllInvoices[i].recipientName,
-        recipientAddress: myAllInvoices[i].recipientAddress,
+        recipientName: myAllInvoices[i].customerName,
+        recipientAddress: myAllInvoices[i].customerLocation,
         description: myAllInvoices[i].description,
         cost: myAllInvoices[i].cost,
         taxRatio: myAllInvoices[i].taxRatio,
-        paid: myAllInvoices[i].paid,
-        kcompanyAddress: myAllInvoices[i].kcompanyAddress,
+        paid: myAllInvoices[i].isPaid,
+        kcompanyAddress: myAllInvoices[i].companyAddress,
       };
       myUpdatedInvoices.push(invoice);
     }
@@ -117,7 +117,7 @@ function Feed({}) {
 
             <tr key={id}>
               <td  className=" border-r border-b border-[#4b4e51]">{Number(post.id)}</td>
-              <td  className=" border-r border-b border-[#4b4e51]">{post.recipientTCVKN}</td>
+              <td  className=" border-r border-b border-[#4b4e51]">{Number(post.recipientTCVKN)}</td>
               <td  className=" border-r border-b border-[#4b4e51]">{post.recipientName}</td>
               <td  className=" border-r border-b border-[#4b4e51]">12/02/2022</td>
               <td  className=" border-r border-b border-[#4b4e51]">{Number(post.cost) + Number(post.cost * (post.taxRatio / 100))}TL</td>
@@ -137,16 +137,16 @@ function Feed({}) {
                         <div className='flex-row w-full flex justify-between gap-6'>
                                 <div className=' text-black/70 font-OpenSans'>
                                         <div className=' border-y-4 border-black max-w-[400px]'>
-                                            <p className=' text-transform: uppercase '>medine mekke a.s</p>
+                                            <p className=' text-transform: uppercase '>Togg</p>
                                             <p>Şirket Cüzdan Adresi:0x08e2922D0773F1969fB1D29b08D564B8b34b992a</p>
                                             <p>VKN: 124123123321</p>
                                             <p>Şirket Adresi: İzmir</p>
                                         </div>
                                         <div className=' border-y-4 border-black max-w-[400px] mt-12'>
-                                            <p className=' text-transform: uppercase '>Sayin</p>
+                                            <p className=' text-transform: uppercase '>Sayın</p>
                                             <p>{post.recipientName}</p>
-                                            <p>Cuzdan Adresi: {post.id}  </p>
-                                            <p>VKN: {post.recipientTCVKN} </p>
+                                            <p>Cüzdan Adresi: {Number(post.id)}  </p>
+                                            <p>VKN: {Number(post.recipientTCVKN)} </p>
                                             <p>Adresi: {post.recipientAddress} </p>
                                         </div>
                                         <p className=' font-bold flex flex-row'>ETTN:  <p className=' font-normal'>57948ac9­0059­4499­96ef­01670d538686</p></p>        
@@ -245,7 +245,7 @@ function Feed({}) {
                                             1
                                         </p>
                                         <p className=' border-l-2 border-black w-full min-w-[150px] max-w-[225px] justify-center  flex  p-1'>
-                                            {post.recipientTCVKN}
+                                            {Number(post.recipientTCVKN)}
                                         </p>
                                         <p className=' border-l-2 border-black w-full min-w-[150px] max-w-[225px] justify-center  flex  p-1'>
                                             {post.recipientName}

@@ -25,13 +25,15 @@ function Feed({}) {
     let myUpdatedInvoices = [];
     for (let i = 0; i < myAllInvoices.length; i++) {
       let invoice = {
-        companyAddress: myAllInvoices[i].companyAddress,
-        recipientTCVKN: myAllInvoices[i].recipientTCVKN,
-        recipientName: myAllInvoices[i].recipientName,
-        recipientAddress: myAllInvoices[i].recipientAddress,
+        id: myAllInvoices[i].id,
+        recipientTCVKN: myAllInvoices[i].tcVkn,
+        recipientName: myAllInvoices[i].customerName,
+        recipientAddress: myAllInvoices[i].customerLocation,
         description: myAllInvoices[i].description,
         cost: myAllInvoices[i].cost,
         taxRatio: myAllInvoices[i].taxRatio,
+        paid: myAllInvoices[i].isPaid,
+        kcompanyAddress: myAllInvoices[i].companyAddress,
 
       };
       myUpdatedInvoices.push(invoice);
@@ -149,7 +151,7 @@ function Feed({}) {
                                             <p className=' text-transform: uppercase '>Sayin</p>
                                             <p>{post.recipientName}</p>
                                             <p>Cüzdan Adresi: {post.companyAddress}  </p>
-                                            <p>VKN: {post.recipientTCVKN.toString()} </p>
+                                            <p>VKN: {Number(post.recipientTCVKN)} </p>
                                             <p>Adresi: {post.recipientAddress} </p>
                                         </div>
                                         <p className=' font-bold flex flex-row'>ETTN:  <p className=' font-normal'>57948ac9­0059­4499­96ef­01670d538686</p></p>        
@@ -248,7 +250,7 @@ function Feed({}) {
                                             1
                                         </p>
                                         <p className=' border-l-2 border-black w-full min-w-[150px] max-w-[225px] justify-center  flex  p-1'>
-                                            {post.recipientTCVKN.toString()}
+                                            {Number(post.recipientTCVKN)}
                                         </p>
                                         <p className=' border-l-2 border-black w-full min-w-[150px] max-w-[225px] justify-center  flex  p-1'>
                                             {post.recipientName}
