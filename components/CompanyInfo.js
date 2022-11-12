@@ -20,7 +20,7 @@ function Feed({}) {
         const Contract = new ethers.Contract(
           ContractAddress,
           ContractAbi,
-          signer
+          signer  
         );
 
         let myAllCompany = await Contract.getMyCompanyInfo();
@@ -47,7 +47,7 @@ function Feed({}) {
           <li className=" font-OpenSans text-[#4a4e50]" >Şirket No: {Number(companyInfo[0])}</li>
           <li className=" font-OpenSans text-[#4a4e50]"  >Şirket Cüzdan Adresi: {companyInfo[1]}</li>
           <li className=" font-OpenSans text-[#4a4e50]"  >Şirket Vergi Kimlik No: {Number(companyInfo[2])}</li>
-          <li className=" font-OpenSans text-[#4a4e50]"  >Şirket Bakiyesi: {Number(companyInfo[3])}</li>
+          <li className=" font-OpenSans text-[#4a4e50]"  >Şirket Bakiyesi: {Number(companyInfo[3]) / (10**16)} DTL</li>
           <li className=" font-OpenSans text-[#4a4e50]"  >Şirket İsmi: {companyInfo[4]}</li>
           <li className=" font-OpenSans text-[#4a4e50]"  >Şirket Adresi: {companyInfo[5]}</li>
           <li className=" font-OpenSans text-[#4a4e50]"  >Şirket IBAN'ı: {companyInfo[6]}</li>

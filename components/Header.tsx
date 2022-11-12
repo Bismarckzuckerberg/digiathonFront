@@ -63,7 +63,7 @@ export default function Header(props: any) {
           </div>
 
           <div className={style.menuitem}>
-            <div className={' bg-[#3b77ac] '}>
+            <div className={style.icon}>
               <CompanyModal/>
             </div>
             <div className={style.icon}>
