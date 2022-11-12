@@ -19,14 +19,16 @@ interface IForm {
   companyAddress: string;
   companyTaxNumber: string;
   ownerName: string;
-  ownerAddress: string;
+  location: string;
+  companyIBAN: string;
 }
 const Home: NextPage = () => {
   const [form, setFormValue] = React.useState<IForm>({
     companyAddress: "",
     companyTaxNumber: "",
     ownerName: "",
-    ownerAddress: "",
+    location: "",
+    companyIBAN: "",
   });
   const [names, setNames] = React.useState<string[]>([]);
   const { isConnected } = useAccount();
@@ -48,7 +50,8 @@ const Home: NextPage = () => {
       form.companyAddress,
       form.companyTaxNumber,
       form.ownerName,
-      form.ownerAddress,
+      form.location,
+      form.companyIBAN,
     ],
   });
   const { data: totalSupplyData } = useContractRead({
@@ -75,7 +78,7 @@ const Home: NextPage = () => {
    return (
      <div className="">
        <div className="">
-         <div className="border border-[#e7ebed] m-4 rounded-2xl">
+         <div className="border border-[#e7ebed] mx-4 rounded-2xl">
            <div className=" m-4 flex-col flex gap-6">
 
              <p className=" font-OpenSans text-[#3a89b4]">Sirket Kaydi</p>
@@ -131,8 +134,18 @@ const Home: NextPage = () => {
                      <input
                        type="text"
                        className="border border-[#a8acae] w-full rounded-sm max-w-[700px]"
-                       value={form.ownerAddress}
-                       onChange={(e) => updateForm("ownerAddress", e)}
+                       value={form.location}
+                       onChange={(e) => updateForm("location", e)}
+                     />
+                     <p className=" font-OpenSans font-extralight text-sm text-[#4a4e50]">Yetki verilecek sirketin adresini giriniz.</p>
+                   </div>
+                   <div>
+                     <p className=" flex font-OpenSans font-thin text-[#222]"><p className=" text-[#3a89b4]">*</p>Sirketin </p>
+                     <input
+                       type="text"
+                       className="border border-[#a8acae] w-full rounded-sm max-w-[700px]"
+                       value={form.companyIBAN}
+                       onChange={(e) => updateForm("companyIBAN", e)}
                      />
                      <p className=" font-OpenSans font-extralight text-sm text-[#4a4e50]">Yetki verilecek sirketin adresini giriniz.</p>
                    </div>
@@ -150,7 +163,10 @@ const Home: NextPage = () => {
                        {isMintLoading && "Waiting for approval"}
                        {isMintStarted && "Kaydet"}
                        {!isMintLoading && !isMintStarted && "Kaydet"}
-                       <GrNext className=" ml-2 scale-110 " color="white" />
+                       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-6 h-6">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                      </svg>
+
                      </button>
 
 

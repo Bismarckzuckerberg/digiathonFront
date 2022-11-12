@@ -1,0 +1,20 @@
+.header, .headerBlur, .headerOther {
+    @apply transition duration-300 flex justify-center h-full max-h-[80px] pl-4 pr-2 z-50 fixed md:w-full w-full items-center py-2 shadow-lg bg-[rgba(18,35,51,.3)];
+    .logo {
+      @apply flex items-center;
+    }
+    svg {
+      @apply transition-all duration-300 w-4 h-4 fill-[#ffffff] cursor-pointer hover:scale-110;
+    }
+    .menu {
+      @apply flex items-center gap-2 text-white;
+      .menuitem {
+        @apply flex flex-row items-center gap-1 border border-white/10 rounded px-2 py-1 text-sm;
+      }
+    }
+    .icon {
+    }
+    &.headerOther {
+      background: #3b77ac !important;
+    }
+  }

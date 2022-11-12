@@ -5,6 +5,57 @@
 		"type": "error"
 	},
 	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "_newIBAN",
+				"type": "string"
+			}
+		],
+		"name": "changeIBAN",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_tcvkn",
+				"type": "uint256"
+			},
+			{
+				"internalType": "string",
+				"name": "_name",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_location",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_description",
+				"type": "string"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_cost",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_taxRatio",
+				"type": "uint256"
+			}
+		],
+		"name": "createInvoice",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
 		"inputs": [],
 		"name": "pay",
 		"outputs": [],
@@ -20,12 +71,17 @@
 			},
 			{
 				"internalType": "uint256",
-				"name": "_balance",
+				"name": "_vkn",
 				"type": "uint256"
 			},
 			{
 				"internalType": "string",
 				"name": "_companyName",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_location",
 				"type": "string"
 			},
 			{
@@ -42,6 +98,17 @@
 	{
 		"stateMutability": "payable",
 		"type": "receive"
+	},
+	{
+		"inputs": [],
+		"name": "withdraw",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"stateMutability": "payable",
+		"type": "fallback"
 	},
 	{
 		"inputs": [],
@@ -80,13 +147,18 @@
 			{
 				"components": [
 					{
+						"internalType": "uint256",
+						"name": "companyID",
+						"type": "uint256"
+					},
+					{
 						"internalType": "address",
 						"name": "companyWallet",
 						"type": "address"
 					},
 					{
 						"internalType": "uint256",
-						"name": "companyID",
+						"name": "vkn",
 						"type": "uint256"
 					},
 					{
@@ -101,6 +173,11 @@
 					},
 					{
 						"internalType": "string",
+						"name": "location",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
 						"name": "companyIBAN",
 						"type": "string"
 					}
@@ -108,6 +185,104 @@
 				"internalType": "struct Digiathon.Company",
 				"name": "",
 				"type": "tuple"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_address",
+				"type": "address"
+			}
+		],
+		"name": "getInvoicesByAddress",
+		"outputs": [
+			{
+				"components": [
+					{
+						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "tcVkn",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "customerName",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "customerLocation",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "description",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "cost",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "taxRatio",
+						"type": "uint256"
+					},
+					{
+						"components": [
+							{
+								"internalType": "uint256",
+								"name": "companyID",
+								"type": "uint256"
+							},
+							{
+								"internalType": "address",
+								"name": "companyWallet",
+								"type": "address"
+							},
+							{
+								"internalType": "uint256",
+								"name": "vkn",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "balance",
+								"type": "uint256"
+							},
+							{
+								"internalType": "string",
+								"name": "companyName",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "location",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "companyIBAN",
+								"type": "string"
+							}
+						],
+						"internalType": "struct Digiathon.Company",
+						"name": "companyInfo",
+						"type": "tuple"
+					}
+				],
+				"internalType": "struct Digiathon.Invoice[]",
+				"name": "",
+				"type": "tuple[]"
 			}
 		],
 		"stateMutability": "view",
@@ -133,13 +308,18 @@
 			{
 				"components": [
 					{
+						"internalType": "uint256",
+						"name": "companyID",
+						"type": "uint256"
+					},
+					{
 						"internalType": "address",
 						"name": "companyWallet",
 						"type": "address"
 					},
 					{
 						"internalType": "uint256",
-						"name": "companyID",
+						"name": "vkn",
 						"type": "uint256"
 					},
 					{
@@ -150,6 +330,11 @@
 					{
 						"internalType": "string",
 						"name": "companyName",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "location",
 						"type": "string"
 					},
 					{
@@ -165,5 +350,97 @@
 		],
 		"stateMutability": "view",
 		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "getMyInvoices",
+		"outputs": [
+			{
+				"components": [
+					{
+						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "tcVkn",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "customerName",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "customerLocation",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "description",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "cost",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "taxRatio",
+						"type": "uint256"
+					},
+					{
+						"components": [
+							{
+								"internalType": "uint256",
+								"name": "companyID",
+								"type": "uint256"
+							},
+							{
+								"internalType": "address",
+								"name": "companyWallet",
+								"type": "address"
+							},
+							{
+								"internalType": "uint256",
+								"name": "vkn",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "balance",
+								"type": "uint256"
+							},
+							{
+								"internalType": "string",
+								"name": "companyName",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "location",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "companyIBAN",
+								"type": "string"
+							}
+						],
+						"internalType": "struct Digiathon.Company",
+						"name": "companyInfo",
+						"type": "tuple"
+					}
+				],
+				"internalType": "struct Digiathon.Invoice[]",
+				"name": "",
+				"type": "tuple[]"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
 	}
-]  
+]

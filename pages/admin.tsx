@@ -3,7 +3,8 @@ import type { NextPage } from "next";
 import { useAccount } from "wagmi";
 import { useEffect } from "react";
 import {useConnectModal} from '@rainbow-me/rainbowkit';
-import SirketKaydetme from '../components/SirketKaydetme'
+import SirketKaydetme from '../components/RegisterCompany'
+import Header from "../components/Header";
 
 
 const Home: NextPage = () => {
@@ -21,7 +22,8 @@ const Home: NextPage = () => {
    
       {isConnected && (
         <>
-
+        <Header/>
+        <div className=" max-h-[80px] h-full"></div>
         <SirketKaydetme/>
 
         </>
