@@ -1,0 +1,371 @@
+[
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_currentCompanyAddress",
+				"type": "address"
+			},
+			{
+				"internalType": "address",
+				"name": "_newCompanyWallet",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_newCompanyTaxNumber",
+				"type": "uint256"
+			},
+			{
+				"internalType": "string",
+				"name": "_newCompanyName",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_newCompanyAddress",
+				"type": "string"
+			}
+		],
+		"name": "changeCompanyInformations",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_recipientTCVKN",
+				"type": "uint256"
+			},
+			{
+				"internalType": "string",
+				"name": "_recipientName",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_recipientAddress",
+				"type": "string"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_cost",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_taxRatio",
+				"type": "uint256"
+			}
+		],
+		"name": "createInvoice",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_companyAddress",
+				"type": "address"
+			}
+		],
+		"name": "disbandCompany",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_companyOwner",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_companyTaxNumber",
+				"type": "uint256"
+			},
+			{
+				"internalType": "string",
+				"name": "_companyName",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_companyAddress",
+				"type": "string"
+			}
+		],
+		"name": "registerCompany",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"stateMutability": "nonpayable",
+		"type": "constructor"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_companyAddress",
+				"type": "address"
+			}
+		],
+		"name": "getCompanyInfo",
+		"outputs": [
+			{
+				"components": [
+					{
+						"internalType": "address",
+						"name": "companyOwner",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "companyTaxNumber",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "companyName",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "companyAddress",
+						"type": "string"
+					},
+					{
+						"internalType": "bool",
+						"name": "isDisbanded",
+						"type": "bool"
+					}
+				],
+				"internalType": "struct BcInvoice.Company",
+				"name": "",
+				"type": "tuple"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_id",
+				"type": "uint256"
+			}
+		],
+		"name": "getInvoiceByID",
+		"outputs": [
+			{
+				"components": [
+					{
+						"internalType": "address",
+						"name": "companyAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "recipientTCVKN",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "recipientName",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "recipientAddress",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "cost",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "taxRatio",
+						"type": "uint256"
+					}
+				],
+				"internalType": "struct BcInvoice.Invoice",
+				"name": "",
+				"type": "tuple"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_address",
+				"type": "address"
+			}
+		],
+		"name": "getInvoicesByAddress",
+		"outputs": [
+			{
+				"components": [
+					{
+						"internalType": "address",
+						"name": "companyAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "recipientTCVKN",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "recipientName",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "recipientAddress",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "cost",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "taxRatio",
+						"type": "uint256"
+					}
+				],
+				"internalType": "struct BcInvoice.Invoice[]",
+				"name": "",
+				"type": "tuple[]"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_TCVKN",
+				"type": "uint256"
+			}
+		],
+		"name": "getInvoicesByTCVKN",
+		"outputs": [
+			{
+				"components": [
+					{
+						"internalType": "address",
+						"name": "companyAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "recipientTCVKN",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "recipientName",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "recipientAddress",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "cost",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "taxRatio",
+						"type": "uint256"
+					}
+				],
+				"internalType": "struct BcInvoice.Invoice[]",
+				"name": "",
+				"type": "tuple[]"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "getMyInvoices",
+		"outputs": [
+			{
+				"components": [
+					{
+						"internalType": "address",
+						"name": "companyAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "recipientTCVKN",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "recipientName",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "recipientAddress",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "cost",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "taxRatio",
+						"type": "uint256"
+					}
+				],
+				"internalType": "struct BcInvoice.Invoice[]",
+				"name": "",
+				"type": "tuple[]"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "owner",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	}
+]
