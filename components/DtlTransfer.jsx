@@ -38,7 +38,7 @@ export default function BakiyeYukle() {
         <div className="border border-[#e7ebed] rounded-2xl min-w-max w-full">
       <div className=" flex flex-col w-full ml-10 pb-6">
 
-            <p className=" flex font-OpenSans font-thin text-[#222] pt-5 "><p className=" text-[#3a89b4]">*</p>Deposit</p>
+            <p className=" flex font-OpenSans font-thin text-[#222] pt-5 "><p className=" text-[#3a89b4]">*</p>Ödeme Miktarı</p>
             <input
             type="number"
             id="inputPassword2"
@@ -46,7 +46,7 @@ export default function BakiyeYukle() {
             value={input}
             onChange={onChangeHandler}
             />
-            <p className=" font-OpenSans font-extralight text-sm text-[#4a4e50] pb-4">Yetki verilecek sirketin vergi numarasini giriniz.</p>
+            <p className=" font-OpenSans font-extralight text-sm text-[#4a4e50] pb-4">Ödemek istediğiniz miktarı giriniz.</p>
 
           </div>
             <div className=" border-t-2 border-[#4284be] flex justify-center bg-[#4284be]/10 h-full min-h-[120px] rounded-b-xl">
