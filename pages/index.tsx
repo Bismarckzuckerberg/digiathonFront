@@ -1,36 +1,32 @@
-import React from "react";
-import type { NextPage } from "next";
-import { useAccount } from "wagmi";
-import { useEffect } from "react";
-import {useConnectModal} from '@rainbow-me/rainbowkit';
 
+import type { NextPage } from 'next';
+import Head from 'next/head';
+import Header from '../components/Header';
+import Background from "../components/Background";
+import Boxes from "../components/Boxes";
+import Slider from '../components/Slider';
+import CardWrapper from '../components/CardWrapper';
+import Appstores from '../components/Appstores';
+import Social from "../components/Social";
 
 const Home: NextPage = () => {
-  const { isConnected } = useAccount();
-  const { openConnectModal } = useConnectModal();
-  useEffect(() => {
-    if(!isConnected)
-    openConnectModal;
-  }, [openConnectModal]);  
-
-
   return (
-    <div className=" bg-white h-screen">
-      
-   
-      {isConnected && (
-        <>
-
-        <div className=" justify-center flex flex-col">
-
-          <div className="flex justify-center p-4">
-          </div>
-          
-
-        </div>        
-        </>
-
-      )}
+    <div >
+      <Head>
+        <title>E-Devlet Ticaret Platformu</title>
+        <meta
+          name="description"
+          content=""
+        />
+        <link rel="icon" href="/logo.png" />
+      </Head>
+      <Header mode='home'/>
+      <Background />
+      <Boxes />
+      <Slider />
+      <CardWrapper />
+      <Appstores />
+      <Social />
     </div>
   );
 };

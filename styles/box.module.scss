@@ -1,0 +1,25 @@
+.boxContainer {
+  @apply flex flex-col md:flex-row justify-evenly mt-5 md:-mt-10 mb-5 gap-4 px-5 md:px-[180px];
+  .box {
+    @apply flex flex-row md:flex-col w-full items-center cursor-pointer pb-2 border-none border-b border-b-black/80 z-10; // md:after:content-none after:content-['>'] after:text-[30px] after:opacity-60
+    .icon {
+      @apply flex justify-center items-center min-w-[60px] min-h-[60px] md:w-[75px] md:h-[75px] bg-[#4284be] outline outline-[5px] outline-white rounded-full;
+      @apply mr-2;
+      svg {
+        @apply fill-white scale-[170%];
+      }
+    }
+    .content {
+      @apply flex flex-col md:block;
+    }
+    .title {
+      @apply font-[500] md:mt-4 text-[17px] whitespace-nowrap md:text-center;
+    }
+    .desc {
+      @apply opacity-80 text-[12px] md:text-center;
+    }
+  }
+  .flexTr {
+    @apply flex gap-5;
+  }
+}
