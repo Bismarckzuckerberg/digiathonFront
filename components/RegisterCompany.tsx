@@ -89,6 +89,14 @@ const Home: NextPage = () => {
       <div className="">
         <div className="border border-[#e7ebed] mx-4 rounded-2xl">
           <div className=" m-4 flex-col flex gap-6">
+            <div className="flex justify-center flex-col ">
+              <p className=" text-3xl font-light text-[#3b77ac] font-OpenSans min-h-[100px] pt-10 pb-8 w-full flex justify-center">
+                Şirket Kayıt Ekranı
+                </p>
+              <p className=" px-10 pb-5 mb-4 text-sm font-OpenSans">
+                Bu ekrandan resmi şirket kaydı oluşturabilirsiniz.
+              </p>
+            </div>
             <p className=" font-OpenSans text-[#3a89b4]">Şirket Kaydı</p>
 
             {mintError && (

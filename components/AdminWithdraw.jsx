@@ -31,9 +31,17 @@ export default function AdminWithdraw() {
   return (
     <div className=" px-4">
         <div className="border border-[#e7ebed] rounded-2xl min-w-max w-full">
-      <div className=" flex flex-col w-full ml-10 pb-6">
-
-            <p className=" flex font-OpenSans font-thin text-[#222] pt-5 "><p className=" text-[#3a89b4]">*</p>Deposit</p>
+      <div className=" flex flex-col w-full m-4">
+            <div className="flex justify-center flex-col ">
+              <p className=" text-3xl font-light text-[#3b77ac] font-OpenSans min-h-[100px] pt-10 pb-8 w-full flex justify-center">
+                Deposit  Ekranı
+                </p>
+              <p className=" px-10 pb-5 mb-4 text-sm font-OpenSans">
+                Belp.
+              </p>
+            </div>
+            <p className=" font-OpenSans text-[#3a89b4]">Deposit Ekranı</p>
+            <p className=" flex font-OpenSans font-thin text-[#222] pt-5 "><p className=" text-[#3a89b4]">*</p>IBAN</p>
             <input
             type=""
             id="inputPassword2"
