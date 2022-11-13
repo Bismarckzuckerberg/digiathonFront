@@ -34,14 +34,14 @@ export default function AdminWithdraw() {
       <div className=" flex flex-col w-full m-4">
             <div className="flex justify-center flex-col ">
               <p className=" text-3xl font-light text-[#3b77ac] font-OpenSans min-h-[100px] pt-10 pb-8 w-full flex justify-center">
-                Deposit  Ekranı
+                Aktarma  Ekranı
                 </p>
               <p className=" px-10 pb-5 mb-4 text-sm font-OpenSans">
                 Belp.
               </p>
             </div>
-            <p className=" font-OpenSans text-[#3a89b4]">Deposit Ekranı</p>
-            <p className=" flex font-OpenSans font-thin text-[#222] pt-5 "><p className=" text-[#3a89b4]">*</p>IBAN</p>
+            <p className=" font-OpenSans text-[#3a89b4]">Aktarma Ekranı</p>
+            <p className=" flex font-OpenSans font-thin text-[#222] pt-5 "><p className=" text-[#3a89b4]">*</p>Gönderim Yapılacak Cüzdan Adresi</p>
             <input
             type=""
             id="inputPassword2"
@@ -49,7 +49,7 @@ export default function AdminWithdraw() {
             value={input}
             onChange={onChangeHandler}
             />
-            <p className=" font-OpenSans font-extralight text-sm text-[#4a4e50] pb-4">Yetki verilecek sirketin vergi numarasini giriniz.</p>
+            <p className=" font-OpenSans font-extralight text-sm text-[#4a4e50] pb-4">Gönderim yapılacak cüzdan adresini giriniz.</p>
 
           </div>
             <div className=" border-t-2 border-[#4284be] flex justify-center bg-[#4284be]/10 h-full min-h-[120px] rounded-b-xl">
