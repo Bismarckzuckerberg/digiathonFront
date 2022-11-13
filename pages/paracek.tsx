@@ -5,7 +5,7 @@ import { useAccount } from "wagmi";
 import { useEffect } from "react";
 import { useConnectModal } from "@rainbow-me/rainbowkit";
 import Link from "next/link";
-import DtlTransfer from "../components/DtlTransfer";
+import AdminWithdraw from "../components/AdminWithdraw";
 
 const DTLDonusturme: NextPage = () => {
   const { isConnected } = useAccount();
@@ -25,19 +25,18 @@ const DTLDonusturme: NextPage = () => {
             <div className="justify-center  flex">
               <div className=" bg-[#fff] w-full max-w-[1200px] h-full p- -mt-12 border border-[#a9acaf]/50 rounded-lg shadow-lg">
                 <div className="flex flex-row gap-20 justify-center font-OpenSans text-[#4b4e51] font-medium border-b border-[#a9acaf]/50 shadow-lg pt-2 ">
-                  <p className=" font-semibold  text-[#3b77ac] border-b-2 border-[#3b77ac] p-2 ">
-                    Para Yükle
-                  </p>
                   <p className=" p-2">
-                    <Link href="/paracek">Para Çek</Link>
+                    <Link href="/parayukle">Para Yükle</Link>
+                  </p>
+                  <p className=" font-semibold  text-[#3b77ac] border-b-2 border-[#3b77ac] p-2 ">
+                    Para Çek
                   </p>
                 </div>
-
-                <DtlTransfer />
+                <AdminWithdraw />
               </div>
             </div>
           </div>
-          <div className="mt-4"></div>
+          <div className="mt-4 max-w-[1200px]"></div>
         </>
       )}
     </div>
