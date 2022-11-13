@@ -1,6 +1,6 @@
 import React from "react";
 import Header from "/components/Header.tsx";
-import MyInvoice from "../components/MyInvoice";
+import MyInvoice from "../components/myInvoice";
 import Link from "next/link";
 
 const FaturaKesmeEkrani = () => {
