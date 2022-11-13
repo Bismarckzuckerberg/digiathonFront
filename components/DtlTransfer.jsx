@@ -9,7 +9,7 @@ export default function BakiyeYukle() {
   const onChangeHandler = (event) => {
     setInput(event.target.value);
   };
-  const payToGoverment = async () => {
+  const payToGovernment = async () => {
     if (typeof window.ethereum !== "undefined") {
       const provider = new ethers.providers.Web3Provider(window.ethereum);
       const signer = provider.getSigner();
@@ -19,7 +19,7 @@ export default function BakiyeYukle() {
       const amount = ethers.utils.parseUnits(input, decimals);
 
       try {
-        const transactionResponse = await contract.payToGoverment({
+        const transactionResponse = await contract.payToGovernment({
           value: amount,
         });
         await listenForTransactionMine(transactionResponse, provider);
@@ -34,8 +34,8 @@ export default function BakiyeYukle() {
         <p className="pl-10 text-3xl font-light text-[#3b77ac] font-OpenSans min-h-[100px] pt-10 pb-8 w-full flex justify-center">
           Dijital Varlık Yükleme Ekranı
         </p>
-        <p className="pl-10 mb-4 text-md font-OpenSans">Bu sayfa üzerinden.</p>
-        <p className="pl-10 font-OpenSans text-[#3a89b4]">Fatura Kaydı</p>
+        <p className="pl-10 mb-4 text-md font-OpenSans">Bu sayfa üzerinden hesabınıza dijital varlık yüklemesi yapabilirsiniz.</p>
+        <p className="pl-10 font-OpenSans text-[#3a89b4]">Dijital Varlık Yükleme</p>
 
         <div className=" flex flex-col w-full ml-10 pb-6">
           <p className=" flex font-OpenSans font-thin text-[#222] pt-5 ">
@@ -55,7 +55,7 @@ export default function BakiyeYukle() {
         <div className=" border-t-2 border-[#4284be] flex justify-center bg-[#4284be]/10 h-full min-h-[120px] rounded-b-xl">
           <div className=" bg-[#3b77ac] h-min p-0.5 mt-8 rounded-full text-[#fff]">
             <button
-              onClick={payToGoverment}
+              onClick={payToGovernment}
               className=" border-t border-[#5d93c2]  rounded-full p-2 px-5  font-OpenSans flex flex-row items-center"
             >
               Para Yükle
