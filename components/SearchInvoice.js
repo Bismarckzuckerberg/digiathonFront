@@ -96,7 +96,7 @@ function Feed({}) {
           Fatura Aratma Ekranı
           </p>
         <p className=" px-10 pb-5 mb-4 text-sm font-OpenSans">
-            Bu sayfa üzerinde faturaları aratabilir ve inceleyebilirsiniz. 
+            Bu aracı kullanarak faturaları aratabilir ve inceleyebilirsiniz. 
         </p>
       </div>
         <p className=' font-OpenSans text-[#3a89b4] py-6'>TC/VKN Fatura Arat</p>

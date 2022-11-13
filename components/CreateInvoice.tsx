@@ -100,7 +100,7 @@ const Home: NextPage = () => {
           Fatura Kesme Ekranı
           </p>
         <p className=" px-10 pb-5 mb-4 text-sm font-OpenSans">
-        Bu sayfa üzerinde yetkili şirketler verdikleri hizmetler karşılığı fatura kişinin cüzdan adresine fatura kesebilir.
+        Yetkili şirketler bu aracı kullanarak verdikleri hizmetler karşılığında fatura oluşturabilirler.
         </p>
       </div>
 

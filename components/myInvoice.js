@@ -92,7 +92,7 @@ function Feed({}) {
           Kestiğim Faturalar
           </p>
         <p className=" px-10 pb-5 mb-4 text-sm font-OpenSans">
-            Bu sayfada kestiğiniz faturları görebilir, detaylarını inceleyebilirsiniz. 
+            Bu aracı kullanarak kesmiş olduğunuz faturları görebilir, fatura detaylarını inceleyebilirsiniz. 
         </p>
       </div>
       <div className="flex flex-col gap-3">
