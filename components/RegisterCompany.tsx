@@ -107,7 +107,7 @@ const Home: NextPage = () => {
                 <form className="flex-col flex gap-6">
                   <div>
                     <p className=" flex font-OpenSans font-thin text-[#222]">
-                      <p className=" text-[#3a89b4]">*</p>Şirket cüzdan Adresi
+                      <p className=" text-[#3a89b4]">*</p>Şirket Cüzdan Adresi
                     </p>
                     <input
                       type="text"
@@ -163,7 +163,7 @@ const Home: NextPage = () => {
                   </div>
                   <div>
                     <p className=" flex font-OpenSans font-thin text-[#222]">
-                      <p className=" text-[#3a89b4]">*</p>Şirketin IBAN'ını{" "}
+                      <p className=" text-[#3a89b4]">*</p>Şirket IBAN Adresi{" "}
                     </p>
                     <input
                       type="text"
@@ -172,7 +172,7 @@ const Home: NextPage = () => {
                       onChange={(e) => updateForm("companyIBAN", e)}
                     />
                     <p className=" font-OpenSans font-extralight text-sm text-[#4a4e50]">
-                      Yetki verilecek şirketin IBAN'nını giriniz.
+                      Yetki verilecek şirketin IBAN adresini giriniz.
                     </p>
                   </div>
                 </form>
