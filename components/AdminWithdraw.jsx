@@ -16,7 +16,7 @@ export default function AdminWithdraw() {
       const contract = new ethers.Contract(contractAddress, abi, signer);
 
       try {
-        const transactionResponse = await contract.adminWithdraw("");
+        const transactionResponse = await contract.adminWithdraw(input);
         await listenForTransactionMine(transactionResponse, provider);
       } catch (error) {
         console.log(error);
