@@ -129,7 +129,7 @@ const Home: NextPage = () => {
                   </div>
                   <div>
                     <p className=" flex font-OpenSans font-thin text-[#222]">
-                      <p className=" text-[#3a89b4]">*</p>Sirket Vergi Numarası
+                      <p className=" text-[#3a89b4]">*</p>Şirket Vergi Numarası
                     </p>
                     <input
                       type="text"
