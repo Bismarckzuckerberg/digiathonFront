@@ -15,6 +15,6 @@
     "jsx": "preserve",
     "incremental": true
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "components/FaturaKesenBil.js", "components/Invoice.jsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "components/FaturaKesenBil.js", "components/Invoice.jsx", "pages/AdminKayit.tsx"],
   "exclude": ["node_modules"]
 }
