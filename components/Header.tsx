@@ -13,7 +13,6 @@ import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 
 export default function Header(props: any) {
   const { mode } = props;
-  console.log(mode);
   useEffect(() => {
     if (typeof window !== "undefined") {
       const header = document.querySelector("#header");
