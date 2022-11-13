@@ -5,7 +5,7 @@ import { useAccount } from "wagmi";
 import { useEffect } from "react";
 import { useConnectModal } from "@rainbow-me/rainbowkit";
 import Link from "next/link";
-import AdminWithdraw from "../components/AdminWithdraw";
+import Withdraw from "../components/Withdraw";
 
 const DTLDonusturme: NextPage = () => {
   const { isConnected } = useAccount();
@@ -26,13 +26,13 @@ const DTLDonusturme: NextPage = () => {
               <div className=" bg-[#fff] w-full max-w-[1200px] h-full p- -mt-12 border border-[#a9acaf]/50 rounded-lg shadow-lg">
                 <div className="flex flex-row gap-20 justify-center font-OpenSans text-[#4b4e51] font-medium border-b border-[#a9acaf]/50 shadow-lg pt-2 ">
                   <p className=" p-2">
-                    <Link href="/parayukle">Para Yükle</Link>
+                    <Link href="/parayukle">Dijital Varlık Yatır</Link>
                   </p>
                   <p className=" font-semibold  text-[#3b77ac] border-b-2 border-[#3b77ac] p-2 ">
-                    Para Çek
+                    Banka Hesabına Para Çek
                   </p>
                 </div>
-                <AdminWithdraw />
+                <Withdraw />
               </div>
             </div>
           </div>

@@ -16,7 +16,7 @@ const Boxes = () => {
       icon: "kurumlar",
       title: `Dijital Varlık Yönetimi`,
       desc: "Dijital Türk Lirası Dönüşümü ve Coin .",
-      href: '/dtlDonusturme'
+      href: '/parayukle'
     },
     {
       id: 3,

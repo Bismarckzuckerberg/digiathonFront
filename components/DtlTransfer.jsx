@@ -32,14 +32,14 @@ export default function BakiyeYukle() {
     <div className="mt-4 px-4">
       <div className="border border-[#e7ebed] rounded-2xl min-w-max w-full">
         <p className="pl-10 text-3xl font-light text-[#3b77ac] font-OpenSans min-h-[100px] pt-10 pb-8 w-full flex justify-center">
-          Para Yükleme Ekranı
+          Dijital Varlık Yükleme Ekranı
         </p>
         <p className="pl-10 mb-4 text-md font-OpenSans">Bu sayfa üzerinden.</p>
         <p className="pl-10 font-OpenSans text-[#3a89b4]">Fatura Kaydı</p>
 
         <div className=" flex flex-col w-full ml-10 pb-6">
           <p className=" flex font-OpenSans font-thin text-[#222] pt-5 ">
-            <p className=" text-[#3a89b4]">*</p>Hesabınıza para yatırma
+            <p className=" text-[#3a89b4]">*</p>Hesabınıza dijital varlık yatırma
           </p>
           <input
             type="number"
@@ -49,7 +49,7 @@ export default function BakiyeYukle() {
             onChange={onChangeHandler}
           />
           <p className=" font-OpenSans font-extralight text-sm text-[#4a4e50] pb-4">
-          Ödemek istediğiniz miktarı giriniz.
+          Ödemek istediğiniz AVAX miktarını girin.
           </p>
         </div>
         <div className=" border-t-2 border-[#4284be] flex justify-center bg-[#4284be]/10 h-full min-h-[120px] rounded-b-xl">

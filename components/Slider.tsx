@@ -31,8 +31,7 @@ const Slider = () => {
         <div className="absolute right-0 top-0 bg-white max-w-[320px] w-full h-full flex flex-col justify-evenly px-7" >
           <h4 className="text-[25px] font-[500]" >Memnuniyet Anketi</h4>
           <p className="text-[.9em] break-words">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus
-            porro nulla adipisci eum facere at, dicta veritatis blanditiis
+            Memnunniyet anketini doldurup geri dönüşlerinizi bizimle paylaşmak ister misiniz? Hemen şimdi anketi başlatın.
           </p>
           <button className="flex items-center gap-1 px-1 py-1 rounded-full text-[14px] border border-blue-500/30 text-[#3b77ac] outline-none [&>svg]:fill-[#3b77ac]">
               <SyncRoundedIcon />

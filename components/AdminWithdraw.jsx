@@ -30,11 +30,11 @@ export default function AdminWithdraw() {
           Aktarma Ekranı
         </p>
         <p className="pl-10 mb-4 text-md font-OpenSans">Gönderim Yapılacak Cüzdan Adresi</p>
-        <p className="pl-10 font-OpenSans text-[#3a89b4]">Aktarma Ekranı</p>
+        <p className="pl-10 font-OpenSans text-[#3a89b4]">Dijital varlık çekimi</p>
         
         <div className=" flex flex-col w-full ml-10 pb-6">
           <p className=" flex font-OpenSans font-thin text-[#222] pt-5 ">
-            <p className=" text-[#3a89b4]">*</p>Deposit
+            <p className=" text-[#3a89b4]">*</p>Çekmek istediğiniz dijital varlık miktarı AVAX cinsinden.
           </p>
           <input
             type=""
@@ -44,7 +44,7 @@ export default function AdminWithdraw() {
             onChange={onChangeHandler}
           />
           <p className=" font-OpenSans font-extralight text-sm text-[#4a4e50] pb-4">
-             Gönderim yapılacak cüzdan adresini giriniz.
+             Kripto varlık cüzdan adresinizi giriniz.
           </p>
         </div>
         <div className=" border-t-2 border-[#4284be] flex justify-center bg-[#4284be]/10 h-full min-h-[120px] rounded-b-xl">
