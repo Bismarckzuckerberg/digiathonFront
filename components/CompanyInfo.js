@@ -52,7 +52,7 @@ function Feed({}) {
           <li className=" font-OpenSans text-[#4a4e50]"  >Şirket Bakiyesi: {Number(companyInfo[3]) / (10**16)} DTL</li>
           <li className=" font-OpenSans text-[#4a4e50]"  >Şirket İsmi: {companyInfo[4]}</li>
           <li className=" font-OpenSans text-[#4a4e50]"  >Şirket Adresi: {companyInfo[5]}</li>
-          <li className=" font-OpenSans text-[#4a4e50]"  >Şirket IBAN'ı: {companyInfo[6]}</li>
+          <li className=" font-OpenSans text-[#4a4e50]"  >Şirket IBAN&#39;ı: {companyInfo[6]}</li>
         </ul>
       </div>
     </div>
